@@ -1,28 +1,95 @@
-import  { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiSend, FiMessageCircle, FiX } from "react-icons/fi";
 
-// Chatbot Configuration
+// Chatbot Configuration with expanded website-related intents
 const chatbotConfig = {
   welcomeMessage: "Hi! How can I help you today?",
   fallbackMessage: "Sorry, I didn't understand that. Can you rephrase?",
+  randomFallbacks: [
+    "I'm not sure I understand. Could you clarify?",
+    "Hmm, I don't have an answer for that. Try asking something else?",
+    "Interesting question! I'll get back to you on that.",
+    "Can you please provide more details?",
+    "That's outside my knowledge base, but I'm here to help with other questions!",
+  ],
   intents: [
     {
       keywords: ["hello", "hi", "hey"],
       response: "Hello! What can I do for you today?",
     },
     {
-      keywords: ["pricing", "cost", "price"],
+      keywords: ["pricing", "cost", "price", "how much"],
       response: "Our pricing depends on the project scope. Can you share more details?",
     },
     {
-      keywords: ["services", "offer", "what do you do"],
+      keywords: ["services", "offer", "what do you do", "services offered"],
       response:
         "We offer creative digital services including social media, content writing, video production, motion graphics, and web development.",
     },
     {
-      keywords: ["contact", "email", "phone"],
+      keywords: ["contact", "email", "phone", "reach you", "get in touch"],
       response: "You can contact us at contact@b4bizz.com or call us at +1234567890.",
+    },
+    {
+      keywords: ["website", "site", "webpage", "web development", "web design"],
+      response:
+        "We build fast, responsive, and user-friendly websites tailored to your business needs using the latest technologies.",
+    },
+    {
+      keywords: ["responsive", "mobile friendly", "mobile responsive"],
+      response:
+        "All our websites are fully responsive and optimized for mobile devices to ensure great user experience on any screen size.",
+    },
+    {
+      keywords: ["seo", "search engine optimization", "rank", "google ranking"],
+      response:
+        "We provide SEO-friendly website development to help improve your site’s visibility and ranking on search engines.",
+    },
+    {
+      keywords: ["ecommerce", "online store", "shopping cart", "payment gateway"],
+      response:
+        "We develop robust e-commerce platforms with secure payment gateways and easy-to-use shopping carts to boost your online sales.",
+    },
+    {
+      keywords: ["cms", "content management system", "wordpress", "manage content"],
+      response:
+        "We offer CMS integration like WordPress to help you easily manage and update your website content without technical skills.",
+    },
+    {
+      keywords: ["hosting", "server", "domain", "website hosting"],
+      response:
+        "We assist with website hosting and domain registration to make sure your site is always accessible and fast.",
+    },
+    {
+      keywords: ["maintenance", "update", "support", "fix", "bug"],
+      response:
+        "We provide website maintenance and support services to keep your site secure, updated, and running smoothly.",
+    },
+    {
+      keywords: ["custom website", "tailored website", "bespoke site"],
+      response:
+        "We create custom websites tailored specifically to your brand identity and business goals.",
+    },
+    {
+      keywords: ["loading speed", "fast website", "performance"],
+      response:
+        "We optimize websites for fast loading speed and great performance to enhance user experience and SEO.",
+    },
+    {
+      keywords: ["security", "secure website", "ssl", "data protection"],
+      response:
+        "We implement security best practices including SSL certificates to protect your website and users' data.",
+    },
+    {
+      keywords: ["portfolio", "examples", "projects", "case studies"],
+      response:
+        "Check out our portfolio on our website to see examples of websites and projects we've delivered.",
+    },
+    {
+      keywords: ["technology", "tech stack", "tools", "framework"],
+      response:
+        "We use modern technologies like React, Next.js, Node.js, and more to build scalable and maintainable websites.",
     },
   ],
 };
@@ -49,7 +116,10 @@ function ChatBot() {
         return intent.response;
       }
     }
-    return chatbotConfig.fallbackMessage;
+    // Return a random fallback message instead of fixed fallbackMessage
+    const randomFallbacks = chatbotConfig.randomFallbacks;
+    const randomIndex = Math.floor(Math.random() * randomFallbacks.length);
+    return randomFallbacks[randomIndex];
   }
 
   // Send a message
