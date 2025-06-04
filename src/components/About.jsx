@@ -52,7 +52,7 @@ function About() {
       data-scroll-speed="0.01"
       className="w-full bg-[#1d1f1e] rounded-t-3xl py-12 sm:py-16 md:py-20 lg:py-24 overflow-x-hidden box-border"
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-16 max-w-7xl box-border">
+      <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-16 max-w-full box-border">
         {/* Intro Text */}
         <div
           className="mb-10 sm:mb-12 md:mb-16 border-t border-b border-zinc-700 pb-6 sm:pb-8 md:pb-10 max-w-full"

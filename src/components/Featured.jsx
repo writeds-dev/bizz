@@ -16,7 +16,7 @@ function Featured() {
   };
 
   return (
-    <div className="container max-w-7xl mx-auto sm:pt-16 pt-8 px-4 sm:px-6 lg:px-8">
+    <div className="container max-w-full mx-auto sm:pt-16 pt-8 px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
       <div className="w-full border-b border-zinc-700 pb-5">
         <h1 className="text-3xl sm:text-5xl font-extrabold">Featured Projects</h1>
@@ -50,7 +50,7 @@ function Featured() {
           <div className="card w-full h-[250px] sm:h-[300px] flex items-center rounded-xl overflow-hidden shadow-lg">
             <img
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1748663976/Screenshot_2025-05-31_092851_trg6uq.png"
+              src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1749000166/refreshing-soda-bottle-blue-liquid-wave-generated-by-ai_uy3veg.jpg"
               alt="featured web design"
               loading="lazy"
             />
@@ -83,7 +83,7 @@ function Featured() {
           <div className="card w-full h-[250px] sm:h-[300px] flex items-center rounded-xl overflow-hidden shadow-lg">
             <img
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1748663976/Screenshot_2025-05-31_092851_trg6uq.png"
+              src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1749000165/abstract-architectural-white-interior-from-array-concrete-cubes-with-large-windows-3d_o9i9dv.jpg"
               alt="featured web development"
               loading="lazy"
             />

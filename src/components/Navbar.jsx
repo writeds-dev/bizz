@@ -16,7 +16,7 @@ function Navbar() {
       <div className="container mx-auto flex items-center justify-between py-4 px-6 sm:px-8 md:px-16 font-sans">
         {/* Logo */}
         <div className="text-white text-2xl font-extrabold tracking-tight select-none cursor-pointer">
-          <Link to="/">B4bizz</Link>
+          <Link to="/">Be4bizz</Link>
         </div>
 
         {/* Desktop Nav Links */}

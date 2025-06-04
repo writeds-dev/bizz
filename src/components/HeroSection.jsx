@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaArrowUpLong } from "react-icons/fa6";
+import ChatBot from "../Pages/ChatBot"; // Make sure this path is correct
 
 function HeroSection() {
   const containerRef = useRef(null);
@@ -8,6 +9,88 @@ function HeroSection() {
   const canvasStarsRef = useRef(null);
   const canvasWavesRef = useRef(null);
 
+  useEffect(() => {
+    const canvas = canvasBubblesRef.current;
+    const ctx = canvas.getContext("2d");
+
+    let animationFrameId;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    // Bubble properties
+    const bubblesCount = 100;
+    const bubbles = [];
+
+    // Initialize bubbles with random position, size, speed
+    function initBubbles() {
+      bubbles.length = 0;
+      for (let i = 0; i < bubblesCount; i++) {
+        bubbles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: 2 + Math.random() * 6,
+          speedY: 0.5 + Math.random() * 1.5,
+          speedX: (Math.random() - 0.5) * 0.5,
+          alpha: 0.2 + Math.random() * 0.3,
+        });
+      }
+    }
+
+    function drawBubble(bubble) {
+      ctx.beginPath();
+      ctx.arc(bubble.x, bubble.y, bubble.radius, 0, 2 * Math.PI);
+      ctx.fillStyle = `rgba(255, 255, 255, ${bubble.alpha})`;
+      ctx.fill();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      for (let bubble of bubbles) {
+        bubble.y -= bubble.speedY;
+        bubble.x += bubble.speedX;
+
+        // Wrap around horizontally
+        if (bubble.x < 0) bubble.x = width;
+        else if (bubble.x > width) bubble.x = 0;
+
+        // Reset bubble to bottom if it goes off top
+        if (bubble.y + bubble.radius < 0) {
+          bubble.x = Math.random() * width;
+          bubble.y = height + bubble.radius;
+          bubble.radius = 2 + Math.random() * 6;
+          bubble.speedY = 0.5 + Math.random() * 1.5;
+          bubble.speedX = (Math.random() - 0.5) * 0.5;
+          bubble.alpha = 0.2 + Math.random() * 0.3;
+        }
+
+        drawBubble(bubble);
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    }
+
+    initBubbles();
+    animate();
+
+    // Handle window resize
+    function handleResize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      initBubbles();
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   return (
     <div
@@ -15,7 +98,7 @@ function HeroSection() {
       data-scroll
       data-scroll-section
       data-scroll-speed="-0.3"
-      className="w-screen h-screen relative overflow-hidden select-none bg-black box-border"
+      className="max-w-full h-screen relative overflow-hidden select-none bg-black box-border"
       style={{ boxSizing: "border-box" }}
     >
       {/* Canvas layers */}
@@ -106,6 +189,9 @@ function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* ChatBot Component Fixed on Page */}
+      <ChatBot />
     </div>
   );
 }

@@ -40,7 +40,7 @@ export default function OurWorks() {
         </motion.div>
       </section>
 
-      <section className="relative bg-black text-white overflow-hidden py-32 px-6 sm:px-12 flex flex-col items-center justify-center text-center max-w-7xl mx-auto">
+      <section className="relative bg-black text-white overflow-hidden py-32 px-6 sm:px-12 flex flex-col items-center justify-center text-center max-w-full mx-auto">
         {/* Background grid */}
         <div className="absolute inset-0 grid grid-cols-12 grid-rows-6 opacity-10 pointer-events-none">
           {[...Array(12)].map((_, i) => (
