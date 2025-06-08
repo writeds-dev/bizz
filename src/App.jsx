@@ -15,8 +15,6 @@ import OurWorks from "./Pages/OurWorks";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
 
-import ChatBot from "./Pages/ChatBot"; 
-
 function App() {
   return (
     <Router>
@@ -46,9 +44,6 @@ function App() {
         </Routes>
 
         <Footer />
-
-        {/* ChatBot added here to be present on all pages */}
-        <ChatBot />
       </div>
     </Router>
   );
