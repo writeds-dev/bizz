@@ -38,18 +38,18 @@ export default function CreativeCardsSection() {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
-  const Nav= useNavigate();
+  const navigate = useNavigate();
 
-  const gotoform=()=>{
-       Nav("/contact")
-  }
+  const gotoForm = () => {
+    navigate("/contact");
+  };
 
   return (
-    <section className="bg-black text-white py-16 px-6 sm:px-12 lg:px-20 max-w-full mx-auto rounded-2xl space-y-20">
+    <section className="bg-black text-white py-12 sm:py-16 px-4 sm:px-8 md:px-12 lg:px-20 max-w-full mx-auto rounded-2xl space-y-16 sm:space-y-20 overflow-x-hidden">
       {/* Top Section */}
-      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-14">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 sm:gap-14 max-w-full">
         {/* Left Image */}
-        <div className="flex-shrink-0 w-full max-w-md rounded-xl overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-[1.04]">
+        <div className="flex-shrink-0 w-full max-w-md rounded-xl overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-[1.04] max-w-full">
           <img
             src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1748661312/two-abstract-circle-shapes-black-background-monochrome-illustration-3d-render_vtpive.jpg"
             alt="Creative sphere"
@@ -58,26 +58,27 @@ export default function CreativeCardsSection() {
         </div>
 
         {/* Right Content */}
-        <div className="flex-1 flex flex-col gap-8">
-          <div className="flex items-center gap-4">
+        <div className="flex-1 flex flex-col gap-6 sm:gap-8 min-w-0 max-w-full">
+          <div className="flex items-center gap-3 sm:gap-4">
             <svg
-              className="w-12 h-12 stroke-current text-lime-400 flex-shrink-0"
+              className="w-10 h-10 sm:w-12 sm:h-12 stroke-current text-lime-400 flex-shrink-0"
               fill="none"
-              strokeWidth="2"
+              strokeWidth={2}
               viewBox="0 0 24 24"
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
+              role="img"
             >
               <path d="M12 2l7 7-7 7-7-7 7-7z" />
               <path d="M19 15v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4" />
             </svg>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
               Best Creative & Digital Agency
             </h2>
           </div>
 
-          <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl">
             At B4bizz, we specialize in crafting innovative digital solutions that
             drive brand growth and engagement. Our expert team blends creativity,
             technology, and strategy to deliver tailored marketing, design, and
@@ -85,7 +86,7 @@ export default function CreativeCardsSection() {
           </p>
 
           {/* Services Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 max-w-full">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 max-w-full">
             {services.map(({ id, title }) => {
               const isActive = activeService === id;
               return (
@@ -93,7 +94,7 @@ export default function CreativeCardsSection() {
                   key={id}
                   onClick={() => setActiveService(id)}
                   aria-pressed={isActive}
-                  className={`relative flex-1 p-6 rounded-3xl cursor-pointer text-center transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-lime-400
+                  className={`relative flex-1 p-5 sm:p-6 rounded-3xl cursor-pointer text-center transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-lime-400
                     ${
                       isActive
                         ? "bg-lime-400 text-black shadow-lg"
@@ -101,27 +102,28 @@ export default function CreativeCardsSection() {
                     }`}
                   style={{ minWidth: 0 }}
                 >
-                  <div className="flex items-center justify-center gap-4 mb-3">
+                  <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2 sm:mb-3">
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-lg font-bold
                         ${
                           isActive ? "bg-black text-lime-400" : "bg-gray-800 text-gray-400"
                         }`}
                     >
                       {id < 10 ? `0${id}` : id}
                     </div>
-                    <h3 className="font-semibold text-xl truncate max-w-full">{title}</h3>
+                    <h3 className="font-semibold text-lg px-3 truncate max-w-full">{title}</h3>
                   </div>
                   {isActive && (
                     <svg
-                      className="absolute top-5 right-5 w-6 h-6 text-black"
+                      className="absolute top-4 right-4 w-5 h-5 sm:w-6 sm:h-6 text-black"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth={2}
                       viewBox="0 0 24 24"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden="true"
+                      role="img"
                     >
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
@@ -132,8 +134,9 @@ export default function CreativeCardsSection() {
           </div>
 
           {/* Explore More */}
-          <button onClick={gotoform}
-            className="mt-10 self-start bg-gradient-to-r from-lime-400 to-teal-500 hover:from-teal-500 hover:to-lime-400 text-black font-semibold uppercase px-12 py-4 rounded-full shadow-xl transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-400"
+          <button
+            onClick={gotoForm}
+            className="mt-8 sm:mt-10 self-start bg-gradient-to-r from-lime-400 to-teal-500 hover:from-teal-500 hover:to-lime-400 text-black font-semibold uppercase px-10 sm:px-12 py-3 sm:py-4 rounded-full shadow-xl transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-400 w-full sm:w-auto"
             aria-label="Explore More"
           >
             Explore More
@@ -142,26 +145,26 @@ export default function CreativeCardsSection() {
       </div>
 
       {/* Bottom Carousel Section */}
-      <section className="bg-gray-900 rounded-3xl flex flex-col md:flex-row gap-10 px-6 md:px-12 py-16 overflow-hidden">
+      <section className="bg-gray-900 rounded-3xl flex flex-col md:flex-row gap-8 md:gap-10 px-4 sm:px-6 md:px-12 py-12 md:py-16 overflow-hidden max-w-full">
         {/* Left Content */}
         <div className="md:w-1/3 flex flex-col justify-between max-w-full min-w-0">
           <div>
             <button
-              className="border border-white rounded-full px-8 py-2 text-sm uppercase mb-8 tracking-wide hover:bg-white hover:text-black transition"
+              className="border border-white rounded-full px-6 sm:px-8 py-1.5 sm:py-2 text-xs sm:text-sm uppercase mb-6 sm:mb-8 tracking-wide hover:bg-white hover:text-black transition w-full md:w-auto"
               aria-label="Recent Work"
             >
               Recent Work
             </button>
-            <p className="text-gray-300 mb-8 leading-relaxed text-base sm:text-lg max-w-full break-words">
+            <p className="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base md:text-lg max-w-full break-words whitespace-normal">
               {slides[current].description}
             </p>
-            <h3 className="font-semibold text-2xl max-w-full truncate">
+            <h3 className="font-semibold text-xl sm:text-2xl max-w-full whitespace-normal">
               {slides[current].highlight}
             </h3>
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex items-center justify-between mt-12 text-base max-w-full">
+          <div className="flex items-center justify-between mt-8 md:mt-12 text-sm sm:text-base max-w-full">
             <button
               onClick={prevSlide}
               aria-label="Previous slide"
@@ -169,7 +172,7 @@ export default function CreativeCardsSection() {
             >
               &#8592;
             </button>
-            <div className="text-center select-none px-8 font-mono tracking-wide">
+            <div className="text-center select-none px-6 font-mono tracking-wide">
               <span>{current + 1}</span>
               <span className="mx-2">/</span>
               <span>{slides.length}</span>
@@ -185,14 +188,14 @@ export default function CreativeCardsSection() {
         </div>
 
         {/* Right Image & Title */}
-        <div className="md:w-2/3 relative flex items-center justify-center max-w-full min-w-0">
+        <div className="md:w-2/3 relative flex items-center justify-center max-w-full min-w-0 overflow-hidden">
           <img
             src={slides[current].imageUrl}
             alt={slides[current].title}
-            className="rounded-3xl object-cover w-full max-h-[480px] shadow-2xl"
+            className="rounded-3xl object-cover w-full max-h-[320px] sm:max-h-[400px] md:max-h-[480px] shadow-2xl"
           />
           <h2
-            className="absolute right-8 bottom-8 text-4xl sm:text-7xl md:text-5xl font-extrabold text-white drop-shadow-xl uppercase leading-tight pointer-events-none select-none max-w-[80%] whitespace-normal break-words"
+            className="absolute inset-x-6 sm:inset-x-8 bottom-6 sm:bottom-8 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white drop-shadow-xl uppercase leading-tight pointer-events-none select-none max-w-[90%] mx-auto whitespace-normal break-words"
             aria-hidden="true"
           >
             {slides[current].title}

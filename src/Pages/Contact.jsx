@@ -121,7 +121,7 @@ export default function ContactModern() {
               <span className="text-lime-400" aria-label="Email">
                 📧
               </span>
-              <span>Be4bizzoffcial@gmail.com</span>
+              <span>Be4bizzofficial@gmail.com</span>
             </div>
           </div>
         </div>
