@@ -9,6 +9,7 @@ import Featured from "./components/Featured";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
 import Join from "./components/Join";
+import Animation from "./Anime/Card";
 
 import Services from "./Pages/Services";
 import OurWorks from "./Pages/OurWorks";
@@ -29,6 +30,7 @@ function App() {
                 <HeroSection />
                 <Marquee />
                 <About />
+                <Animation/>
                 <Eyes />
                 <Featured />
                 <Cards />

@@ -47,14 +47,14 @@ export default function ContactModern() {
   };
 
   return (
-    <section className="bg-gradient-to-tr from-black via-gray-900 to-black text-white py-20 px-4 sm:px-10 min-h-screen">
+    <section className="bg-gradient-to-tr from-black via-gray-900 to-black text-white py-20 px-6 sm:px-12 min-h-screen">
       <ToastContainer position="top-right" autoClose={4000} />
-      <div className="max-w-full mx-auto relative text-center md:text-left mb-16 px-4 sm:px-0">
+      <div className="max-w-7xl mx-auto relative text-center md:text-left mb-16">
         {/* Heading */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight relative inline-block max-w-4xl mx-auto md:mx-0">
           Connect{" "}
           <span
-            className="text-transparent bg-clip-text font-extrabold animate-gradient-x"
+            className=""
             style={{
               backgroundImage: `linear-gradient(90deg, #A3E635, #7CBF00, #A3E635)`,
             }}
@@ -64,10 +64,7 @@ export default function ContactModern() {
           <br />
           With our{" "}
           <span
-            className="italic text-transparent bg-clip-text font-extrabold animate-gradient-x"
-            style={{
-              backgroundImage: `linear-gradient(90deg, #A3E635, #7CBF00, #A3E635)`,
-            }}
+            className="italic "
           >
             team
           </span>
@@ -104,7 +101,7 @@ export default function ContactModern() {
       </div>
 
       {/* Content Grid */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="space-y-8">
           <h4 className="text-sm font-semibold text-lime-400 uppercase tracking-wide">Contact Us</h4>
@@ -148,7 +145,7 @@ export default function ContactModern() {
                     <Field
                       name="firstName"
                       placeholder="First name"
-                      className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none"
+                      className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400"
                       aria-label="First name"
                     />
                     <ErrorMessage name="firstName" component="div" className="text-red-400 text-sm mt-1" />
@@ -157,7 +154,7 @@ export default function ContactModern() {
                     <Field
                       name="lastName"
                       placeholder="Last name"
-                      className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none"
+                      className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400"
                       aria-label="Last name"
                     />
                     <ErrorMessage name="lastName" component="div" className="text-red-400 text-sm mt-1" />
@@ -167,7 +164,7 @@ export default function ContactModern() {
                 <Field
                   name="phone"
                   placeholder="Mobile number"
-                  className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none"
+                  className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400"
                   aria-label="Mobile number"
                 />
                 <ErrorMessage name="phone" component="div" className="text-red-400 text-sm mt-1" />
@@ -176,7 +173,7 @@ export default function ContactModern() {
                   name="email"
                   type="email"
                   placeholder="Email address"
-                  className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none"
+                  className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400"
                   aria-label="Email address"
                 />
                 <ErrorMessage name="email" component="div" className="text-red-400 text-sm mt-1" />
@@ -186,7 +183,7 @@ export default function ContactModern() {
                   name="message"
                   placeholder="Write your message..."
                   rows="4"
-                  className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none"
+                  className="w-full bg-black/40 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400"
                   aria-label="Message"
                 />
                 <ErrorMessage name="message" component="div" className="text-red-400 text-sm mt-1" />

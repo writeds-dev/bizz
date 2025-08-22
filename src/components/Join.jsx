@@ -115,7 +115,7 @@ export default function Join() {
           </div>
 
           {/* Awards */}
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto sm:mx-0 px-4">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-4xl mx-auto sm:mx-0 px-4">
             {awards.map(({ id, title, iconUrl, bgColor }) => (
               <div
                 key={id}
@@ -123,9 +123,6 @@ export default function Join() {
                 aria-label={`${title}`}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") toggleAccordion(id);
-                }}
               >
                 <img
                   src={iconUrl}
@@ -141,126 +138,125 @@ export default function Join() {
       </div>
 
       {/* Process Section */}
-     <section className="bg-gradient-to-tr from-gray-900 via-black to-gray-900 rounded-3xl p-10 md:p-16 text-white max-w-7xl mx-auto space-y-14">
-  {/* Header */}
-  <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-8">
-    {/* Icon */}
-    <div className="w-24 h-24 opacity-90 flex-shrink-0 relative">
-      <svg
-        width="96"
-        height="96"
-        viewBox="0 0 80 80"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="mx-auto"
-        aria-hidden="true"
-      >
-        <circle cx="40" cy="40" r="14" fill="#111" />
-        {[...Array(6)].map((_, i) => {
-          const angle = (i * 360) / 6;
-          const rad = (angle * Math.PI) / 180;
-          const x1 = 40 + Math.cos(rad) * 22;
-          const y1 = 40 + Math.sin(rad) * 22;
-          const x2 = 40 + Math.cos(rad) * 38;
-          const y2 = 40 + Math.sin(rad) * 38;
-          return (
-            <line
-              key={i}
-              x1={x1}
-              y1={y1}
-              x2={x2}
-              y2={y2}
-              stroke="#2c2c2c"
-              strokeWidth="6"
-              strokeLinecap="round"
-              className="transition-colors duration-300 group-hover:stroke-lime-400"
-            />
-          );
-        })}
-      </svg>
-      {/* Glow circle */}
-      <div className="absolute inset-0 rounded-full shadow-[0_0_20px_8px_rgba(132,204,22,0.4)] pointer-events-none"></div>
-    </div>
+      <section className="bg-gradient-to-tr from-gray-900 via-black to-gray-900 rounded-3xl p-10 md:p-16 text-white max-w-7xl mx-auto space-y-14">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-8">
+          {/* Icon */}
+          <div className="w-24 h-24 opacity-90 flex-shrink-0 relative">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 80 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="mx-auto"
+              aria-hidden="true"
+            >
+              <circle cx="40" cy="40" r="14" fill="#111" />
+              {[...Array(6)].map((_, i) => {
+                const angle = (i * 360) / 6;
+                const rad = (angle * Math.PI) / 180;
+                const x1 = 40 + Math.cos(rad) * 22;
+                const y1 = 40 + Math.sin(rad) * 22;
+                const x2 = 40 + Math.cos(rad) * 38;
+                const y2 = 40 + Math.sin(rad) * 38;
+                return (
+                  <line
+                    key={i}
+                    x1={x1}
+                    y1={y1}
+                    x2={x2}
+                    y2={y2}
+                    stroke="#2c2c2c"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    className="transition-colors duration-300 group-hover:stroke-lime-400"
+                  />
+                );
+              })}
+            </svg>
+            {/* Glow circle */}
+            <div className="absolute inset-0 rounded-full shadow-[0_0_20px_8px_rgba(132,204,22,0.4)] pointer-events-none"></div>
+          </div>
 
-    {/* Title */}
-    <h2 className="text-4xl md:text-5xl font-light leading-tight max-w-3xl">
-      Our <span className="font-extrabold text-lime-400">process</span> of Creating Dreams to Reality
-    </h2>
-  </div>
-
-  {/* Description */}
-  <p className="max-w-3xl text-gray-300 text-base sm:text-lg leading-relaxed mx-auto tracking-wide">
-    At B4Bizz, every project begins with a deep understanding of your business objectives. Our process is designed to deliver measurable results through strategic execution and continuous optimization. We begin with in-depth discovery and research, then implement high-performing campaigns across SEO, email marketing, social media, and paid channels—ensuring alignment with your brand and audience.
-  </p>
-
-  {/* Steps Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
-    {/* Step 1 */}
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 rounded-2xl p-8 flex flex-col items-center text-center shadow-lg shadow-lime-900/60 hover:shadow-lime-500/80 transition-shadow duration-500 group cursor-default">
-      <div className="text-lime-400 font-semibold mb-5 flex items-center gap-4">
-        <div className="grid grid-cols-2 gap-1">
-          <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse" />
-          <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse delay-100" />
-          <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse delay-200" />
-          <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse delay-300" />
+          {/* Title */}
+          <h2 className="text-4xl md:text-5xl font-light leading-tight max-w-3xl">
+            Our <span className="font-extrabold text-lime-400">process</span> of Creating Dreams to Reality
+          </h2>
         </div>
-        <span className="tracking-wide uppercase text-sm">Step</span>
-        <span className="text-lime-400 font-bold text-xl">01</span>
-      </div>
-      <h3 className="text-white font-bold text-2xl mb-4">Discovery Phase</h3>
-      <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xs">
-        We conduct a comprehensive consultation to understand your brand, goals, competitors, and target audience. This phase sets the foundation for a strong strategy.
-      </p>
-    </div>
 
-    {/* Step 2 */}
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 rounded-2xl p-8 flex flex-col items-center text-center shadow-lg shadow-lime-900/60 hover:shadow-lime-500/80 transition-shadow duration-500 group cursor-default">
-      <div className="text-lime-400 font-semibold mb-5 flex items-center gap-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={3}
-          stroke="currentColor"
-          className="w-10 h-10 mr-2"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4 17h16M4 7h16M4 12h16"
-          />
-        </svg>
-        <span className="tracking-wide uppercase text-sm">Step</span>
-        <span className="text-lime-400 font-bold text-xl">02</span>
-      </div>
-      <h3 className="text-white font-bold text-2xl mb-4">Implementation</h3>
-      <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xs">
-        We execute targeted digital campaigns across relevant platforms, aligning with your brand tone and business objectives. Every touchpoint is optimized for performance and reach.
-      </p>
-    </div>
+        {/* Description */}
+        <p className="max-w-3xl text-gray-300 text-base sm:text-lg leading-relaxed mx-auto tracking-wide">
+          At B4Bizz, every project begins with a deep understanding of your business objectives. Our process is designed to deliver measurable results through strategic execution and continuous optimization. We begin with in-depth discovery and research, then implement high-performing campaigns across SEO, email marketing, social media, and paid channels—ensuring alignment with your brand and audience.
+        </p>
 
-    {/* Step 3 Image */}
-    <div className="rounded-2xl overflow-hidden shadow-lg shadow-lime-800/50 max-w-full w-full hover:scale-[1.02] transition-transform duration-500 cursor-pointer">
-      <img
-        src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1748761414/background-with-black-shape-texture-3d-illustration-3d-rendering_1_qhecvt.jpg"
-        alt="Discovery phase team"
-        className="w-full h-full object-cover rounded-2xl"
-        loading="lazy"
-      />
-    </div>
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
+          {/* Step 1 */}
+          <div className="bg-gradient-to-b from-gray-900 to-gray-800 rounded-2xl p-8 flex flex-col items-center text-center shadow-lg shadow-lime-900/60 hover:shadow-lime-500/80 transition-shadow duration-500 group cursor-default">
+            <div className="text-lime-400 font-semibold mb-5 flex items-center gap-4">
+              <div className="grid grid-cols-2 gap-1">
+                <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse" />
+                <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse delay-100" />
+                <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse delay-200" />
+                <span className="w-5 h-5 rounded-full border-2 border-lime-400 animate-pulse delay-300" />
+              </div>
+              <span className="tracking-wide uppercase text-sm">Step</span>
+              <span className="text-lime-400 font-bold text-xl">01</span>
+            </div>
+            <h3 className="text-white font-bold text-2xl mb-4">Discovery Phase</h3>
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xs">
+              We conduct a comprehensive consultation to understand your brand, goals, competitors, and target audience. This phase sets the foundation for a strong strategy.
+            </p>
+          </div>
 
-    {/* Step 4 Image */}
-    <div className="rounded-2xl overflow-hidden shadow-lg shadow-lime-800/50 max-w-full w-full hover:scale-[1.02] transition-transform duration-500 cursor-pointer">
-      <img
-        src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1748761415/3d-rendering-abstract-black-white_2_qhmwsr.jpg"
-        alt="Implementation phase team"
-        className="w-full h-full object-cover rounded-2xl"
-        loading="lazy"
-      />
-    </div>
-  </div>
-</section>
+          {/* Step 2 */}
+          <div className="bg-gradient-to-b from-gray-900 to-gray-800 rounded-2xl p-8 flex flex-col items-center text-center shadow-lg shadow-lime-900/60 hover:shadow-lime-500/80 transition-shadow duration-500 group cursor-default">
+            <div className="text-lime-400 font-semibold mb-5 flex items-center gap-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={3}
+                stroke="currentColor"
+                className="w-10 h-10 mr-2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 17h16M4 7h16M4 12h16"
+                />
+              </svg>
+              <span className="tracking-wide uppercase text-sm">Step</span>
+              <span className="text-lime-400 font-bold text-xl">02</span>
+            </div>
+            <h3 className="text-white font-bold text-2xl mb-4">Implementation</h3>
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xs">
+              We execute targeted digital campaigns across relevant platforms, aligning with your brand tone and business objectives. Every touchpoint is optimized for performance and reach.
+            </p>
+          </div>
 
+          {/* Step 3 Image */}
+          <div className="rounded-2xl overflow-hidden shadow-lg shadow-lime-800/50 max-w-full w-full hover:scale-[1.02] transition-transform duration-500 cursor-pointer">
+            <img
+              src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1748761414/background-with-black-shape-texture-3d-illustration-3d-rendering-3_qhecvt.jpg"
+              alt="Discovery phase team"
+              className="w-full h-full object-cover rounded-2xl"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Step 4 Image */}
+          <div className="rounded-2xl overflow-hidden shadow-lg shadow-lime-800/50 max-w-full w-full hover:scale-[1.02] transition-transform duration-500 cursor-pointer">
+            <img
+              src="https://res.cloudinary.com/dcqfpnls6/image/upload/v1748761415/3d-rendering-abstract-black-white_2_qhmwsr.jpg"
+              alt="Implementation phase team"
+              className="w-full h-full object-cover rounded-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
 
       <FAQSection />
     </section>
